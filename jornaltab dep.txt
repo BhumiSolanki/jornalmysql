@@ -1,0 +1,26 @@
+CREATE TABLE dep
+(deptno number(2,0),
+ dname varchar2(14) Not null,
+ loc varchar2(13),
+ constraint pk_dep1 primary key (deptno)
+);
+
+insert into DEP(DEPTNO, DNAME, LOC) values(12, 'purchase', 'london');
+insert into dep values(15, 'sale', 'rajkot');
+insert into dep values(30, 'head', 'surat');
+insert into dep values(40, 'account', 'India'); 
+
+commit;
+
+ 3.select deptno, dname from dep where deptno>30;
+
+22. select loc from emp e , dep d where e.dname = 'sale' and
+       e.deptno = d.deptno ; 
+
+23. select * from emp e ,dep d where (dname = 'account' or
+     dname='head') and e.deptno = d.deptno order by e.deptno
+    asc; 
+    OR
+    select * from emp e ,dept d where d.dname in
+    (‘ACCOUNTING’,’RESEARCH’) and e.deptno = d.deptno order by
+   e.deptno asc; 
